@@ -1,3 +1,3 @@
-class Podcaster < ActiveRecord::Base
+class Podcaster < ApplicationRecord
   has_many :podcasts
-end 
+end

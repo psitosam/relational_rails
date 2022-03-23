@@ -1,0 +1,13 @@
+<h1>All Podcasts</h1>
+<% @podcasts.each do |podcast| %>
+<h3><a href="/podcasts/<%= podcast.id %>"><%= podcast.name %></a></h3>
+<p><%= podcast.topic %></p>
+<p><%= podcast.podcaster %></p>
+<a href="/podcasts/<%= podcast.id  %>/edit">Edit</a>
+<form action="/podcasts/<%= podcast.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="delete"/>
+  </form>
+<% end %>
+<a href="/">Back To Podcast Manager</a>
