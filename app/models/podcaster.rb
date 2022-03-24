@@ -9,4 +9,8 @@ class Podcaster < ApplicationRecord
   def index
   end
 
+  def show
+    @podcaster = Podcaster.find(params[:id])
+  end
+
 end

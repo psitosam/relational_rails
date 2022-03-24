@@ -8,7 +8,7 @@ RSpec.describe 'the podcasters index page' do
     podcaster_3 = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense", expertise: "Neuroscience, Philosophy, Current Events", active: true, number_of_podcasts: 1)
 
     visit "/podcasters"
-    save_and_open_page
+    
     expect(page).to have_content(podcaster_1.name)
     expect(page).to have_content(podcaster_1.expertise)
     expect(page).to have_content(podcaster_2.name)
