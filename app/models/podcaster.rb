@@ -5,6 +5,8 @@ class Podcaster < ApplicationRecord
   validates_presence_of :expertise
   validates_presence_of :active
   validates_presence_of:number_of_podcasts
+
   def index
   end
+  
 end
