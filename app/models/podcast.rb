@@ -7,7 +7,5 @@ class Podcast < ApplicationRecord
   validates_inclusion_of :favorites, :in => [true, false]
 
   def index
-
-  end 
-
+  end
 end
