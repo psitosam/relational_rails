@@ -6,7 +6,7 @@ class CreatePodcasts < ActiveRecord::Migration[5.2]
       t.string :topic
       t.integer :length_in_minutes
       t.boolean :favorites
-      t.references :podcaster, foreign_key: true
+      t.references :podcasts, :podcaster, foreign_key: true
 
       t.timestamps
     end
