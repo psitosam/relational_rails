@@ -3,10 +3,10 @@ class Podcaster < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :podcast_names
   validates_presence_of :expertise
-  validates_presence_of :active
+  validates_inclusion_of :active, :in => [true, false]
   validates_presence_of:number_of_podcasts
 
   def index
   end
-  
+
 end
