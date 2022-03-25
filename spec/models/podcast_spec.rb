@@ -2,17 +2,15 @@ require 'rails_helper'
 
 describe Podcast, type: :model do
   describe "validations" do
-      before :each do
-        podcast = Podcast.create!(podcaster: "Dr. Anton Helman", name:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: false)
-        it { should validate_presence_of(:name) }
+        it { should validate_presence_of(:podcaster_name)}
+        it { should validate_presence_of(:title) }
         it { should validate_presence_of(:topic) }
         it { should validate_presence_of(:length_in_minutes) }
-        it { should validate_presence_of(:favorites) }
-
-      end
+        it { should allow_value(true).for(:favorites) }
+        it { should allow_value(false).for(:favorites) }
+        it { should_not allow_value(nil).for(:favorites) }
   end
   describe "relationships" do
-    # podcast = Podcast.create!(podcaster: "Dr. Anton Helman", name:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips",
     it { should belong_to(:podcaster) }
   end
 end

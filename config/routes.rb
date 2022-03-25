@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/podcasters', to: 'podcasters#index'
   get '/podcasts', to: 'podcasts#index'
+  get '/podcasters/:id', to: 'podcasters#show'
+  get 'podcasts/:id', to: 'podcasts#show'
+  get "podcasters/:id/podcasts", to: 'podcasters#parent_children_index'
 end
