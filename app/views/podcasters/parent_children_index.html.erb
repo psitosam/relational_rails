@@ -1,0 +1,7 @@
+<h1>All Podcasts by <%= @podcaster.name %></h1>
+<% @podcaster.podcasts.each do |podcast| %>
+<h3><%= podcast.topic %></h3>
+<p><%= podcast.title %></p>
+<p><%= podcast.length_in_minutes %> Minutes</p>
+<p>Favorite : <%= podcast.favorites %></p><br>
+<% end %>

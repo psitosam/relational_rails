@@ -13,4 +13,10 @@ class Podcaster < ApplicationRecord
     @podcaster = Podcaster.find(params[:id])
   end
 
+  # def get_all_podcasts
+  #   @podcaster = Podcaster.find(params[:id])
+  #   @podcaster.podcasts
+  # end
+
+
 end

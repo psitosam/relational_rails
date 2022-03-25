@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/podcasts', to: 'podcasts#index'
   get '/podcasters/:id', to: 'podcasters#show'
   get 'podcasts/:id', to: 'podcasts#show'
+  get "podcasters/:id/podcasts", to: 'podcasters#parent_children_index'
 end

@@ -7,4 +7,9 @@ class PodcastersController < ApplicationController
     @podcaster = Podcaster.find(params[:id])
   end
 
+  def parent_children_index
+    @podcaster = Podcaster.find(params[:id])
+    @podcaster.podcasts 
+  end
+
 end
