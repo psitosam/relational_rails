@@ -6,12 +6,15 @@ RSpec.describe "the podcasts show page" do
     podcast_1 = helman.podcasts.create!(podcaster_name: "Dr. Anton Helman", title:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: true)
 
     visit "/podcasts/#{podcast_1.id}"
-    save_and_open_page
+    
 
     expect(page).to have_content(podcast_1.podcaster_name)
     expect(page).to have_content(podcast_1.title)
     expect(page).to have_content(podcast_1.topic)
     expect(page).to have_content(podcast_1.length_in_minutes)
     expect(page).to have_content(podcast_1.favorites)
+    expect(page).to have_link("All Podcasts")
+    expect(page).to have_link("All Podcasters")
+
   end
 end

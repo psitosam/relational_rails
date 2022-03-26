@@ -27,7 +27,7 @@ RSpec.describe 'the podcasts index page' do
     podcast_9 = weingart.podcasts.create!(podcaster_name: "Dr. Scott Weingart", title: "EMCrit Podcast", topic: "Surviving Sepsis Update 2022", length_in_minutes: 37, favorites: false)
 
     visit "/podcasts"
-
+    
     expect(page).to have_content(podcast_1.podcaster_name)
     expect(page).to have_content(podcast_1.title)
     expect(page).to have_content(podcast_1.topic)
@@ -73,5 +73,7 @@ RSpec.describe 'the podcasts index page' do
     expect(page).to have_content(podcast_9.topic)
     expect(page).to have_content(podcast_9.length_in_minutes)
     expect(page).to have_content(podcast_9.favorites)
+    expect(page).to have_link("All Podcasters")
+
   end
 end

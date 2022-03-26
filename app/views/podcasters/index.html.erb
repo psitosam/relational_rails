@@ -1,7 +1,9 @@
+<a href="/">Back To Podcast Manager</a><br>
+<a href="/podcasts">All Podcasts</a>
+
 <h1>All Podcasters</h1>
 <% @podcasters.each do |podcaster| %>
 <h3 class="name"><a href="/podcasters/<%= podcaster.id %>"><%= podcaster.name %></a></h3>
 <p><%= podcaster.expertise %></p>
 <p>Created at : <%= podcaster.created_at %></p>
 <% end %>
-<a href="/">Back To Podcast Manager</a>
