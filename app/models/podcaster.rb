@@ -6,17 +6,16 @@ class Podcaster < ApplicationRecord
   validates_inclusion_of :active, :in => [true, false]
   validates_presence_of:number_of_podcasts
 
-  def index
+  def self.sort_by_created_at
+    Podcaster.order(created_at: :desc)
   end
 
-  def show
-    @podcaster = Podcaster.find(params[:id])
+  def readable_date
+    self.created_at.strftime("%B %d %Y %I:%M %p %Z")
   end
 
-  # def get_all_podcasts
-  #   @podcaster = Podcaster.find(params[:id])
-  #   @podcaster.podcasts
-  # end
-
+  def number_of_children
+    self.number_of_podcasts
+  end
 
 end
