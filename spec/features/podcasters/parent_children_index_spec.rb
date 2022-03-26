@@ -12,7 +12,7 @@ RSpec.describe "the podcasters/podcaster_id/podcasts page", type: :feature do
 
     visit "/podcasters/#{podcaster_1.id}/podcasts"
 
-    save_and_open_page
+     # save_and_open_page
 
     expect(page).to have_content(podcast_1.podcaster_name)
     expect(page).to have_content(podcast_1.title)
@@ -29,5 +29,9 @@ RSpec.describe "the podcasters/podcaster_id/podcasts page", type: :feature do
     expect(page).to have_content(podcast_3.topic)
     expect(page).to have_content(podcast_3.length_in_minutes)
     expect(page).to have_content(podcast_3.favorites)
+    expect(page).to have_link("All Podcasts")
+    expect(page).to have_link("All Podcasters")
+
+
   end
 end
