@@ -31,6 +31,7 @@ RSpec.describe "the podcasters/podcaster_id/podcasts page", type: :feature do
     expect(page).to have_content(podcast_3.favorites)
     expect(page).to have_link("All Podcasts")
     expect(page).to have_link("All Podcasters")
+    
 
 
   end
