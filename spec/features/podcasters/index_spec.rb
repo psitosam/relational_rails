@@ -31,15 +31,9 @@ RSpec.describe 'the podcasters index page', type: :feature do
     expect(page).to have_content(podcaster_3.created_at)
   end
 
-  it 'has a link at the top of the page to the podcasts index' do
-
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",number_of_podcasts: 2, active: true)
-
-    podcaster_2 = Podcaster.create!(name: "Dr. Scott Weingart", expertise: "EmergencyMedicine, Critical Care, Academic Productivity, Philosophy", podcast_names: "EMCritPodcast, On Deeper Reflection", number_of_podcasts: 2, active: true)
-
-    podcaster_3 = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense",expertise: "Neuroscience, Philosophy, Current Events", active: true, number_of_podcasts: 1)
-    visit "/podcasters"
-
-    expect(page).to have_link("All Podcasts")
+  it 'links to the all podcasts page' do
+    visit '/podcasters'
+    click_link 'All Podcasts'
+    expect(current_path).to eq('/podcasts')
   end
 end

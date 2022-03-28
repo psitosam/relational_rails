@@ -30,12 +30,15 @@ ActiveRecord::Schema.define(version: 2022_03_23_140544) do
     t.string "title"
     t.string "topic"
     t.integer "length_in_minutes"
-    t.boolean "favorites"
+    t.boolean "favorites", default: false, null: false
+    t.bigint "podcasts_id"
     t.bigint "podcaster_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["podcaster_id"], name: "index_podcasts_on_podcaster_id"
+    t.index ["podcasts_id"], name: "index_podcasts_on_podcasts_id"
   end
 
   add_foreign_key "podcasts", "podcasters"
+  add_foreign_key "podcasts", "podcasts", column: "podcasts_id"
 end

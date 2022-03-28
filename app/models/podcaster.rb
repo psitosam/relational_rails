@@ -18,4 +18,6 @@ class Podcaster < ApplicationRecord
     self.number_of_podcasts
   end
 
+  
+
 end

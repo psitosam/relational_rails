@@ -1,0 +1,18 @@
+<a href="/podcasts">All Podcasts</a>
+<a href="/podcasters">All Podcasters</a><br>
+
+
+<%= form_with url: '/podcasters', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :expertise %>
+  <%= form.text_field :expertise %>
+  <%= form.label :podcast_names %>
+  <%= form.text_field :podcast_names %>
+  <%= form.label :number_of_podcasts %>
+  <%= form.text_field :number_of_podcasts %>
+  <%= form.label :active %>
+  <%= form.check_box :active %>
+
+  <%= form.submit "Create Podcaster" %>
+<% end %>

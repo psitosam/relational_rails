@@ -3,14 +3,27 @@ class PodcastersController < ApplicationController
     @podcasters = Podcaster.sort_by_created_at
   end
 
+  def new
+  end
+
   def show
     @podcaster = Podcaster.find(params[:id])
   end
 
-#this one should be in the model :
-  def parent_children_index
-    @podcaster = Podcaster.find(params[:id])
-    @podcaster.podcasts
+  def destroy
+    podcaster = Podcaster.find(params[:id])
+    podcaster.destroy
+    redirect_to '/podcasters'
   end
 
+  def create
+    Podcaster.create(podcaster_params)
+    redirect_to '/podcasters'
+  end
+
+  private
+    def podcaster_params
+      params.permit(:name, :podcast_names, :expertise, :number_of_podcasts, :active)
+      #{ name: params[:name], age: params[:age].to_i }
+    end
 end
