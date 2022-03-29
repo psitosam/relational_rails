@@ -7,4 +7,6 @@
 <p>Number of Podcasts : <%= @podcaster.number_of_children %></p>
 <p>Active? : <%= @podcaster.active %></p><br>
 
-<a href="/podcasters/<%= @podcaster.id %>/podcasts">All Podcasts By  <%=@podcaster.name %></a>
+<a href="/podcasters/<%= @podcaster.id %>/podcasts">All Podcasts By  <%=@podcaster.name %></a><br>
+
+<a href="/podcasters/<%= @podcaster.id %>/edit">Update Podcaster</a>

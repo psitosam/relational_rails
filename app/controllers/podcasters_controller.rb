@@ -6,8 +6,23 @@ class PodcastersController < ApplicationController
   def new
   end
 
+  def create
+    Podcaster.create(podcaster_params)
+    redirect_to '/podcasters'
+  end
+
   def show
     @podcaster = Podcaster.find(params[:id])
+  end
+
+  def edit
+    @podcaster = Podcaster.find(params[:id])
+  end
+
+  def update
+    @podcaster = Podcaster.find(params[:id])
+    @podcaster.update(podcaster_params)
+    redirect_to "/podcasters/#{@podcaster.id}"
   end
 
   def destroy
@@ -16,14 +31,10 @@ class PodcastersController < ApplicationController
     redirect_to '/podcasters'
   end
 
-  def create
-    Podcaster.create(podcaster_params)
-    redirect_to '/podcasters'
-  end
 
   private
     def podcaster_params
-      params.permit(:name, :podcast_names, :expertise, :number_of_podcasts, :active)
+      params.require(:podcaster).permit(:name, :podcast_names, :expertise, :number_of_podcasts, :active)
       #{ name: params[:name], age: params[:age].to_i }
     end
 end

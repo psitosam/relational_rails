@@ -34,9 +34,16 @@ RSpec.describe 'the podcasters show page' do
   it 'links to that podcasters all podcasts page' do
     podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
     visit "/podcasters/#{podcaster_1.id}"
-    save_and_open_page
 
     click_link "All Podcasts By #{podcaster_1.name}"
     expect(current_path).to eq("/podcasters/#{podcaster_1.id}/podcasts")
+  end
+
+  it 'links to the update podcaster page' do
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    visit "/podcasters/#{podcaster_1.id}"
+
+    click_link 'Update Podcaster'
+    expect(current_path).to eq("/podcasters/#{podcaster_1.id}/edit")
   end
 end
