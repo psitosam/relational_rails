@@ -7,6 +7,7 @@ class PodcastersController < ApplicationController
   end
 
   def create
+
     Podcaster.create(podcaster_params)
     redirect_to '/podcasters'
   end
@@ -34,6 +35,7 @@ class PodcastersController < ApplicationController
 
   private
     def podcaster_params
+      # require 'pry'; binding.pry
       params.require(:podcaster).permit(:name, :podcast_names, :expertise, :number_of_podcasts, :active)
       #{ name: params[:name], age: params[:age].to_i }
     end

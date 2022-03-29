@@ -18,6 +18,10 @@ class Podcaster < ApplicationRecord
     self.number_of_podcasts
   end
 
-  
+  # def new_podcast
+  #   require 'pry'; binding.pry
+  #   self.Podcast.new(podcast_params)
+  # end
+
 
 end

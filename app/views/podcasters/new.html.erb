@@ -2,7 +2,7 @@
 <a href="/podcasters">All Podcasters</a><br>
 
 
-<%= form_with url: '/podcasters', method: :post, local: true do |form| %>
+<%= form_with model: Podcaster, url: '/podcasters', method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
   <%= form.label :expertise %>

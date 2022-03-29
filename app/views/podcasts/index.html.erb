@@ -3,7 +3,7 @@
 <% @podcasts.each do |podcast| %>
 <h3><a href="/podcasts/<%= podcast.id %>"><%= podcast.title %></a></h3>
 <p><%= podcast.topic %></p>
-<p><%= podcast.podcaster_name %></p>
+<p><%= podcast.podcaster.name %></p>
 <p>Runtime : <%= podcast.length_in_minutes %> minutes</p>
 <p>Favorite : <%= podcast.favorites %></p>
 <a href="/podcasts/<%= podcast.id  %>/edit">Edit</a>
