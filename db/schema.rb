@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_223756) do
+ActiveRecord::Schema.define(version: 2022_03_29_230656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_03_29_223756) do
     t.string "name"
     t.string "expertise"
     t.string "podcast_names"
-    t.integer "number_of_podcasts"
+    t.integer "years_active"
     t.boolean "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the podcasters podcast creation' do
   it 'links to the podcasters podcasts page' do
-    helman = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",number_of_podcasts: 2, active: true)
+    helman = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",years_active: 2, active: true)
     visit "/podcasters/#{helman.id}/podcasts"
 
     click_link("Create Podcast")
@@ -10,7 +10,7 @@ RSpec.describe 'the podcasters podcast creation' do
   end
 
   it 'can create a new podcast' do
-    helman = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",number_of_podcasts: 2, active: true)
+    helman = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",years_active: 2, active: true)
     visit("/podcasters/#{helman.id}/new")
 
     

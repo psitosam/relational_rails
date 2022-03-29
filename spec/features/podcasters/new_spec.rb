@@ -10,7 +10,7 @@ RSpec.describe 'the podcaster creation' do
     fill_in 'Name', with: 'Jocko Willink'
     fill_in('Expertise', with: 'Leadership, History, Current Events, Physical Fitness')
     fill_in('Podcast names', with: 'Jocko Podcast')
-    fill_in('Number of podcasts', with: 1)
+    fill_in('Years active', with: 1)
     check('Active')
     click_button('Create Podcaster')
     # form.check_box:true(or false) for true/false attributes
@@ -19,11 +19,11 @@ RSpec.describe 'the podcaster creation' do
 
   end
   it 'links to the new page from the podcasters index' do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency   Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's   Podcast",number_of_podcasts: 2, active: true)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency   Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's   Podcast",years_active: 2, active: true)
 
-    podcaster_2 = Podcaster.create!(name: "Dr. Scott Weingart", expertise: "EmergencyMedicine,  Critical Care, Academic Productivity, Philosophy", podcast_names: "EMCritPodcast, On Deeper   Reflection", number_of_podcasts: 2, active: true)
+    podcaster_2 = Podcaster.create!(name: "Dr. Scott Weingart", expertise: "EmergencyMedicine,  Critical Care, Academic Productivity, Philosophy", podcast_names: "EMCritPodcast, On Deeper   Reflection", years_active: 2, active: true)
 
-    podcaster_3 = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense",expertise:  "Neuroscience, Philosophy, Current Events", active: true, number_of_podcasts: 1)
+    podcaster_3 = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense",expertise:  "Neuroscience, Philosophy, Current Events", active: true, years_active: 1)
     visit '/podcasters'
 
     click_link("Create a new Podcaster")

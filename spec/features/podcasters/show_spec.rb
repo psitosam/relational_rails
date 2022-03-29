@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the podcasters show page' do
   it "visitor to podcasters/:id sees the podcaster with that id including the podcaster's attributes" do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
 
     visit "/podcasters/#{podcaster_1.id}"
 
@@ -16,7 +16,7 @@ RSpec.describe 'the podcasters show page' do
   end
 
   it 'links to the all podcasters page' do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
     visit "/podcasters/#{podcaster_1.id}"
 
     click_link 'All Podcasters'
@@ -24,7 +24,7 @@ RSpec.describe 'the podcasters show page' do
   end
 
   it 'links to the all podcasts page' do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
     visit "/podcasters/#{podcaster_1.id}"
 
     click_link 'All Podcasts'
@@ -32,7 +32,7 @@ RSpec.describe 'the podcasters show page' do
   end
 
   it 'links to that podcasters all podcasts page' do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
     visit "/podcasters/#{podcaster_1.id}"
 
     click_link "All Podcasts By #{podcaster_1.name}"
@@ -40,7 +40,7 @@ RSpec.describe 'the podcasters show page' do
   end
 
   it 'links to the update podcaster page' do
-    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
     visit "/podcasters/#{podcaster_1.id}"
 
     click_link 'Update Podcaster'

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "the podcasts show page" do
   it "visitor to the podcasts/:id can see the podcast with that id including the podcast's attributes" do
-    helman = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, number_of_podcasts: 2)
+    helman = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
     podcast_1 = helman.podcasts.create!(title:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: true)
 
     visit "/podcasts/#{podcast_1.id}"
