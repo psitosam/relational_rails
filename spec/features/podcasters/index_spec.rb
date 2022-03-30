@@ -9,7 +9,7 @@ RSpec.describe 'the podcasters index page', type: :feature do
     podcaster_3 = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense",expertise:  "Neuroscience, Philosophy, Current Events", active: true, years_active: 1)
 
     visit "/podcasters"
-    
+
     expect(page).to have_content(podcaster_1.name)
     expect(page).to have_content(podcaster_2.name)
     expect(page).to have_content(podcaster_3.name)
@@ -44,5 +44,14 @@ RSpec.describe 'the podcasters index page', type: :feature do
     click_link 'Create a new Podcaster'
 
     expect(current_path).to eq('/podcasters/new')
+  end
+
+  it 'links to the podcaster edit page' do
+    podcaster_1 = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's Podcast",years_active: 2, active: true)
+    visit '/podcasters'
+    click_link 'Edit'
+
+    expect(current_path).to eq("/podcasters/#{podcaster_1.id}/edit")
+  
   end
 end
