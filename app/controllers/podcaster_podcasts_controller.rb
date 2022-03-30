@@ -2,17 +2,18 @@ class PodcasterPodcastsController < ApplicationController
   before_action :get_podcaster
 
   def index
-
-    @podcasts = @podcaster.podcasts
+    if params[:sort] == 'alpha'
+      @podcasts = @podcaster.podcasts.order(:topic)
+    else
+      @podcasts = @podcaster.podcasts
+    end
   end
 
   def new
 
-    # @podcast = @podcaster.podcasts.build
   end
   #
   def create
-# require 'pry'; binding.pry
     @podcaster.podcasts.build(podcast_params)
     @podcaster.save
 
@@ -21,7 +22,6 @@ class PodcasterPodcastsController < ApplicationController
   #
   private
       def get_podcaster
-          # require 'pry'; binding.pry
         @podcaster = Podcaster.find(params[:podcaster_id])
       end
 

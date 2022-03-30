@@ -14,20 +14,20 @@ harris = Podcaster.create!(name: "Sam Harris", podcast_names: "Making Sense", ex
 
 weingart = Podcaster.create!(name: "Dr. Scott Weingart", podcast_names: "EMCrit Podcast, On Deeper Reflection", expertise: "Emergency Medicine, Critical Care, Academic Productivity, Philosophy", active: true, years_active: 2)
 
-helman.podcasts.create!(podcaster_name: "Dr. Anton Helman", title:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: true)
+helman.podcasts.create!(title:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: true)
 
-helman.podcasts.create!(podcaster_name: "Dr. Anton Helman", title:"Emergency Medicine Cases", topic: "EM Quick Hits 36: Surviving Sepsis", length_in_minutes: 62, favorites: true)
+helman.podcasts.create!(title:"Emergency Medicine Cases", topic: "EM Quick Hits 36: Surviving Sepsis", length_in_minutes: 62, favorites: true)
 
-helman.podcasts.create!(podcaster_name: "Dr. Anton Helman", title:"Educator's Podcast", topic: "Podcasting In MedEd", length_in_minutes: 17, favorites: true)
+helman.podcasts.create!(title:"Educator's Podcast", topic: "Podcasting In MedEd", length_in_minutes: 17, favorites: true)
 
-harris.podcasts.create!(podcaster_name: "Sam Harris", title: "Making Sense", topic: "The Russian War in Ukraine", length_in_minutes: 38, favorites: true)
+harris.podcasts.create!(title: "Making Sense", topic: "The Russian War in Ukraine", length_in_minutes: 38, favorites: true)
 
-harris.podcasts.create!(podcaster_name: "Sam Harris", title: "Making Sense", topic: "Recipes For Future Plagues", length_in_minutes: 118, favorites: false)
+harris.podcasts.create!(title: "Making Sense", topic: "Recipes For Future Plagues", length_in_minutes: 118, favorites: false)
 
-harris.podcasts.create!(podcaster_name: "Sam Harris", title: "Making Sense", topic: "The Future of American Democracy", length_in_minutes: 141, favorites: true)
+harris.podcasts.create!(title: "Making Sense", topic: "The Future of American Democracy", length_in_minutes: 141, favorites: true)
 
-weingart.podcasts.create!(podcaster_name: "Dr. Scott Weingart", title: "EMCrit Podcast", topic: "Ep. 319: Safe and Smart Reversal of Anticoagulation Agents in 2022", length_in_minutes: 9, favorites: false)
+weingart.podcasts.create!(title: "EMCrit Podcast", topic: "Ep. 319: Safe and Smart Reversal of Anticoagulation Agents in 2022", length_in_minutes: 9, favorites: false)
 
-weingart.podcasts.create!(podcaster_name: "Dr. Scott Weingart", title: "On Deeper Reflection", topic: "Email Tactics", length_in_minutes: 37, favorites: false)
+weingart.podcasts.create!(title: "On Deeper Reflection", topic: "Email Tactics", length_in_minutes: 37, favorites: false)
 
-weingart.podcasts.create!(podcaster_name: "Dr. Scott Weingart", title: "EMCrit Podcast", topic: "Surviving Sepsis Update 2022", length_in_minutes: 37, favorites: false)
+weingart.podcasts.create!(title: "EMCrit Podcast", topic: "Surviving Sepsis Update 2022", length_in_minutes: 37, favorites: false)

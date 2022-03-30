@@ -7,4 +7,8 @@ class Podcast < ApplicationRecord
 
   def index
   end
+
+  def only_favorites
+    Podcast.all.select { |podcast| podcast.favorites == true }
+  end
 end

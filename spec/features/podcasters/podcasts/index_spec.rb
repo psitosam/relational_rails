@@ -38,4 +38,19 @@ RSpec.describe 'podcasters podcasts index' do
     click_link("Create Podcast")
     expect(current_path).to eq("/podcasters/#{helman.id}/new")
   end
+
+  it 'has a button that will sort podcasts in alphabetical order' do
+    helman = Podcaster.create!(name: "Dr. Anton Helman", expertise: "Emergency   Medicine,Education", podcast_names: "Emergency Medicine Cases, Educator's   Podcast",years_active: 2, active: true)
+
+    podcast_1 = helman.podcasts.create!(title:"Emergency Medicine Cases", topic: "Ep. 165: Getting Sued in Emergency Medicine - Practical Tips", length_in_minutes: 77, favorites: true)
+
+    podcast_2 = helman.podcasts.create!(title:"Educator's Podcast", topic: "Podcasting In MedEd", length_in_minutes: 17, favorites: true)
+
+    visit "/podcasters/#{helman.id}/podcasts"
+
+    click_link("Sort A-Z")
+
+    expect(page.text.index(podcast_2.topic)).to be > (page.text.index(podcast_1.topic))
+
+  end
 end

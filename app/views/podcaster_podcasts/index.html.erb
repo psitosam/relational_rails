@@ -9,5 +9,5 @@
 <p><%= podcast.length_in_minutes %> Minutes</p>
 <p>Favorite : <%= podcast.favorites %></p><br>
 <% end %>
-
+<%= link_to 'Sort A-Z', "/podcasters/#{@podcaster.id}/podcasts?sort=alpha", method: :get %>
 <a href="/podcasters/<%= @podcaster.id %>/new">Create Podcast</a>
