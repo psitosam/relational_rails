@@ -6,3 +6,6 @@
 <p>Topic : <%= @podcast.topic %></p>
 <p>Length : <%= @podcast.length_in_minutes %> minutes</p>
 <p>Favorites : <%= @podcast.favorites %></p>
+
+
+<a href="/podcasts/<%= @podcast.id %>/edit">Update Podcast</a>

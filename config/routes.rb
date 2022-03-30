@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/podcasts', to: 'podcasts#index'
   post '/podcasts', to: 'podcaster_podcasts#create'
   # get '/podcasts/new', to: 'podcasts#new'
+  get '/podcasts/:id/edit', to: 'podcasts#edit'
   get '/podcasts/:id', to: 'podcasts#show'
+  patch '/podcasts/:id', to: 'podcasts#update'
   #anything with a hard coded word following parents should come above show page route
 end

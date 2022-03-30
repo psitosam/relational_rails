@@ -9,19 +9,20 @@ class PodcastsController < ApplicationController
     @podcast = Podcast.find(params[:id])
   end
 
-  # def new
-  #   @podcast = Podcast.new
-  # end
+  def edit
+    @podcast = Podcast.find(params[:id])
+  end
 
-  # private
-  #     def get_podcaster
-  #         # require 'pry'; binding.pry
-  #       @podcaster = Podcaster.find(params[:podcaster_id])
-  #     end
-  # def create
-  #   Podcast.create(podcast_params)
-  #   redirect_to "/podcasters/#{@podcaster.id}/podcasts"
-  # end
+  def update
+    @podcast = Podcast.find(params[:id])
+    @podcast.update(podcast_params)
+    redirect_to "/podcasts/#{@podcast.id}"
+  end
+
+    private
+        def podcast_params
+          params.require(:podcast).permit(:title, :topic, :length_in_minutes, :favorites)
+        end
 
 
 end

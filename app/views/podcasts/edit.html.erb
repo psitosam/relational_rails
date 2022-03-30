@@ -1,0 +1,15 @@
+<a href="/podcasts">All Podcasts</a>
+<a href="/podcasters">All Podcasters</a><br>
+<h1>Podcast Edit Page</h1>
+
+<%= form_with model: @podcast, url: "/podcasts/#{@podcast.id}", method: :patch, local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.label :topic %>
+  <%= form.text_field :topic %>
+  <%= form.label :length_in_minutes %>
+  <%= form.text_field :length_in_minutes %>
+  <%= form.label :favorites %>
+  <%= form.check_box :favorites %>
+  <%= form.submit "Submit"%>
+<% end %>
