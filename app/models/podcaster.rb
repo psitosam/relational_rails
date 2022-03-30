@@ -4,7 +4,7 @@ class Podcaster < ApplicationRecord
   validates_presence_of :podcast_names
   validates_presence_of :expertise
   validates_inclusion_of :active, :in => [true, false]
-  validates_presence_of:number_of_podcasts
+  validates_presence_of:years_active
 
   def self.sort_by_created_at
     Podcaster.order(created_at: :desc)
@@ -15,7 +15,13 @@ class Podcaster < ApplicationRecord
   end
 
   def number_of_children
-    self.number_of_podcasts
+    self.years_active
   end
+
+  # def new_podcast
+  #   require 'pry'; binding.pry
+  #   self.Podcast.new(podcast_params)
+  # end
+
 
 end

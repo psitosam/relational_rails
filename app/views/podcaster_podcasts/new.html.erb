@@ -1,0 +1,17 @@
+<a href="/podcasts">All Podcasts</a>
+<a href="/podcasters">All Podcasters</a><br>
+<h1>Add A Podcast For <%= @podcaster.name %></h1>
+
+<%= form_with model: Podcast, url:"/podcasters/#{@podcaster.id}/podcasts", method: :post, local:true do |form| %>
+
+<%= form.label :title %>
+<%= form.text_field :title %>
+<%= form.label :topic %>
+<%= form.text_field :topic %>
+<%= form.label :length_in_minutes %>
+<%= form.text_field :length_in_minutes %>
+<%= form.label :favorites %>
+<%= form.check_box :favorites %>
+
+<%= form.submit "Create Podcast" %>
+<% end %>
