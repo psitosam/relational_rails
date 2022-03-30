@@ -2,7 +2,7 @@ class PodcastsController < ApplicationController
   # before_action :get_podcaster
 
   def index
-    @podcasts = Podcast.all
+    @podcasts = Podcast.all.select { |podcast| podcast.favorites == true }
   end
 
   def show
@@ -18,6 +18,10 @@ class PodcastsController < ApplicationController
     @podcast.update(podcast_params)
     redirect_to "/podcasts/#{@podcast.id}"
   end
+
+  # def only_favorites
+  #   Podcast.all.select { |podcast| podcast.favorites == true }
+  # end
 
     private
         def podcast_params

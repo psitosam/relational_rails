@@ -76,4 +76,19 @@ RSpec.describe 'the podcasts index page' do
     expect(page).to have_link("All Podcasters")
 
   end
+
+  it 'shows only podcasts where the favorites attribute returns true' do
+    helman = Podcaster.create!(name: "Dr. Anton Helman", podcast_names: "Emergency Medicine Cases, Educator's Podcast", expertise: "Emergency Medicine, Education", active: true, years_active: 2)
+
+    weingart = Podcaster.create!(name: "Dr. Scott Weingart", podcast_names: "EMCrit Podcast, On Deeper Reflection", expertise: "Emergency Medicine, Critical Care, Academic Productivity, Philosophy", active: true, years_active: 2)
+
+    podcast_2 = helman.podcasts.create!(title:"Emergency Medicine Cases", topic: "EM Quick Hits 36: Surviving Sepsis", length_in_minutes: 62, favorites: true)
+
+    podcast_9 = weingart.podcasts.create!(title: "EMCrit Podcast", topic: "Surviving Sepsis Update 2022", length_in_minutes: 37, favorites: false)
+
+    visit("/podcasts")
+
+    expect(page).to have_content("Emergency Medicine Cases")
+    expect(page).to_not have_content("EMCrit Podcast")
+  end
 end
